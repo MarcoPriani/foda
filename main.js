@@ -97,20 +97,37 @@ function nuevoFODA(){
 }
 
 
-nuevoFODA();
+// nuevoFODA();
 
-//en los if iría nuevoFODA.fortaleza.total > nuevoFoda.debilidad.total
-if ((nuevoFODA.fortaleza.total > nuevoFODA.debilidad.total)&&(nuevoFODA.oportunidad.total > nuevoFODA.amenaza.Total)){
-    console.log(crecimiento);
-}
-else if ((nuevoFODA.debilidad.total > nuevoFODA.fortaleza.total)&&(nuevoFODA.amenaza.total > nuevoFODA.oportunidad.total)){
-    console.log(estrategiaSupervivencia);
-}
+// //en los if iría nuevoFODA.fortaleza.total > nuevoFoda.debilidad.total
+// if ((nuevoFODA.fortaleza.total > nuevoFODA.debilidad.total)&&(nuevoFODA.oportunidad.total > nuevoFODA.amenaza.Total)){
+//     console.log(crecimiento);
+// }
+// else if ((nuevoFODA.debilidad.total > nuevoFODA.fortaleza.total)&&(nuevoFODA.amenaza.total > nuevoFODA.oportunidad.total)){
+//     console.log(estrategiaSupervivencia);
+// }
 
-else if ((nuevoFODA.fortaleza.total > nuevoFODA.debilidad.total)&&(nuevoFODA.amenaza.total > nuevoFODA.oportunidad.total)){
-    console.log(defensa)
-}
+// else if ((nuevoFODA.fortaleza.total > nuevoFODA.debilidad.total)&&(nuevoFODA.amenaza.total > nuevoFODA.oportunidad.total)){
+//     console.log(defensa)
+// }
 
-else if ((nuevoFODA.debilidad.total > nuevoFODA.fortaleza.total)&&(nuevoFODA.oportunidad.total > nuevoFODA.amenaza.total)){
-    console.log(reenfoque);
-};
+// else if ((nuevoFODA.debilidad.total > nuevoFODA.fortaleza.total)&&(nuevoFODA.oportunidad.total > nuevoFODA.amenaza.total)){
+//     console.log(reenfoque);
+// };
+
+
+//Capturo el btn
+let buttonCapturar = document.getElementById("buttonCapturar")
+//Capturo los inputs
+let fortalezaInput = document.getElementById("fortaleza")
+let oportunidadInput = document.getElementById("oportunidad")
+let debilidadInput = document.getElementById("debilidad")
+let amenazaInput = document.getElementById("amenaza")
+//Asigno evento al btn
+buttonCapturar.addEventListener('click', ()=>{
+    //Hago que al momento en que hago click al btn, se lea el valor de cada input
+    //lo guardo en un new FODA
+    let foda = new FODA(fortalezaInput.value, oportunidadInput.value, debilidadInput.value, amenazaInput.value)
+    //Veo que funciona por console
+    console.log(foda);
+})
