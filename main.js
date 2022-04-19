@@ -127,7 +127,14 @@ let amenazaInput = document.getElementById("amenaza")
 buttonCapturar.addEventListener('click', ()=>{
     //Hago que al momento en que hago click al btn, se lea el valor de cada input
     //lo guardo en un new FODA
-    let foda = new FODA(fortalezaInput.value, oportunidadInput.value, debilidadInput.value, amenazaInput.value)
+    let foda = new FODA("Fortalezas "+ fortalezaInput.value, "Oportunidades " + oportunidadInput.value, "Debilidades " + debilidadInput.value, "Amenazas "+ amenazaInput.value)
     //Veo que funciona por console
-    console.log(foda);
+    console.log(foda)
+    return foda;
 })
+console.log(foda);
+
+localStorage.setItem('datos', JSON.stringify(foda));
+let guardado = localStorage.getItem('datos');
+
+console.log('objetoObtenido: ', JSON.parse(guardado));
