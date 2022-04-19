@@ -130,11 +130,9 @@ buttonCapturar.addEventListener('click', ()=>{
     let foda = new FODA("Fortalezas "+ fortalezaInput.value, "Oportunidades " + oportunidadInput.value, "Debilidades " + debilidadInput.value, "Amenazas "+ amenazaInput.value)
     //Veo que funciona por console
     console.log(foda)
-    return foda;
+    localStorage.setItem('datos', JSON.stringify(foda));
+    let guardado = localStorage.getItem('datos');
+
+    console.log('Objeto obtenido: ', JSON.parse(guardado));
+return foda;
 })
-console.log(foda);
-
-localStorage.setItem('datos', JSON.stringify(foda));
-let guardado = localStorage.getItem('datos');
-
-console.log('objetoObtenido: ', JSON.parse(guardado));
